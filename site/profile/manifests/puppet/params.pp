@@ -11,7 +11,8 @@ class profile::puppet::params {
       $remote = '/vagrant'
     }
     default: {
-      $remote = 'git@github.com:terrimonster/puppet-control.git'
+      #$remote = 'git@github.com:terrimonster/puppet-control.git'
+      $remote = 'git@https://github.com/shegoj/myPuppet_control'
     }
   }
 }
