@@ -29,7 +29,7 @@ class profile::puppet::agent (
     setting => 'environment',
     value => $environment,
   }
-  ini_setting1 { "sample setting":
+  ini_setting { "sample setting":
     ensure => present,
     path => "/tmp/foo.ini",
     section => 'bar',
