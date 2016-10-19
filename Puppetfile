@@ -48,7 +48,4 @@ mod 'staging',
 mod 'epel',
   :git => 'https://github.com/stahnma/puppet-module-epel.git'
 
-mod 'nginx',
-  :git => 'https://github.com/jfryman/puppet-nginx.git'
-
 ###############################################################################
