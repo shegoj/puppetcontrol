@@ -20,4 +20,11 @@ class profile::puppet::agent (
     setting => 'environment',
     value => $environment,
   }
+  ini_setting { "puppet agent's environment2":
+    ensure => present,
+    path => "${::settings::confdir}/puppet2.conf",
+    section => 'agent',
+    setting => 'environment',
+    value => $environment,
+  }
 }
