@@ -3,7 +3,7 @@ class profile::puppet::agent (
   $environment = 'production'
 ) {
 
-  notify{"olusegun":}
+  notify{"olusegun ${::settings::confdir}":}
   validate_string($master, $environment)
 
 
