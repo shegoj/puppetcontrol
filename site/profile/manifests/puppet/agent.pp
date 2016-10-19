@@ -36,4 +36,11 @@ class profile::puppet::agent (
     setting => 'baz',
     value => 'quux',
   }
+	file { 'motd':
+  	name    => '/etc/motd',
+    mode    => '0664',
+    owner   => 'root',
+   	group   => 'root',
+    content => ('hello world\n shegoj whats up')
+  }
 }
