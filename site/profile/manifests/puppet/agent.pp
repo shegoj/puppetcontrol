@@ -3,7 +3,9 @@ class profile::puppet::agent (
   $environment = 'production'
 ) {
 
+  notify{"olusegun":}
   validate_string($master, $environment)
+
 
   ini_setting { "puppet agent's master":
     ensure => present,
