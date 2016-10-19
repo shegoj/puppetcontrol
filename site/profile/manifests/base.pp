@@ -1,4 +1,4 @@
 class profile::base {
-  include ntp
+  #include ntp
   include profile::puppet::agent
 }
