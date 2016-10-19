@@ -22,3 +22,8 @@ node default {
   hiera_include('classes')
   notify {" was here":}
 }
+
+
+node 'xweb.vagrant.vm' {
+	hiera_include('classes')
+}
