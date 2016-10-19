@@ -20,4 +20,5 @@ node 'xmaster.vagrant.vm' {
 node default {
   ## Using hiera to classify our nodes
   hiera_include('classes')
+  notify {" was here":}
 }
