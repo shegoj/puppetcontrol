@@ -1,8 +1,5 @@
 forge 'http://forge.puppetlabs.com'
 
-mod 'ntp',
-  :git => 'https://github.com/puppetlabs/puppetlabs-ntp.git'
-
 ###############################################################################
 # General dependencies
 
