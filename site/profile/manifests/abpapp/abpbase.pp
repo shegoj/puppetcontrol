@@ -14,7 +14,6 @@ class profile::abpapp::abpbase  {
 		managehome	=>	true
 	}
 	class {'apache':
-		ensure		=> 	installed,
 	}
 	apache::vhost { 'user.example.com':
   		port          => '8080',
