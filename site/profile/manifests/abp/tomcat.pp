@@ -14,13 +14,18 @@ class profile::abp::tomcat (
 	 }
 	else {$app_base = $base }
 	
-	tomcat::install { '/opt/tomcat6':
+	tomcat::install {"$app_base":
 		source_url		=> 	'http://www-eu.apache.org/dist/tomcat/tomcat-6/v6.0.45/bin/apache-tomcat-6.0.45.tar.gz',
-		catalina_base		=>	"$app_base",
-		port			=>	"$app_port",		 
+	}
+	tomcat::instance { 'tomcat6':
+		catalina_home		=>	"$app_base",
+		catalina_base		=>	"$app_base/abp",
 		user			=>	"esportz",
 		group			=>	"esportz",
 	}	
+	tomcat::config::server { 'tomcat6-config':
+		catalina_base		=>	"$app_base/abp",
+		port			=>	"$app_port",		 
 }
 	
 	
