@@ -53,4 +53,7 @@ mod 'nginx',
 
 mod 'apache',
  :git => 'https://github.com/puppetlabs/puppetlabs-apache.git' 
+
+mod 'tomcat',
+ :git => 'https://github.com/puppetlabs/puppetlabs-tomcat.git' 
 ###############################################################################
