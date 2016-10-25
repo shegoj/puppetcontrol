@@ -50,4 +50,7 @@ mod 'epel',
 
 mod 'nginx',
  :git => 'https://github.com/jfryman/puppet-nginx.git' 
+
+mod 'apache',
+ :git => 'https://github.com/puppetlabs/puppetlabs-apache.git' 
 ###############################################################################
