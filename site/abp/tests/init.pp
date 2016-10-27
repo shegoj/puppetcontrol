@@ -13,5 +13,5 @@ node default {
 	#class {'abp' :
 	#	version => '10.2'
 	#}
-	include profile::abpapp::abpbase
+	include profile::abp::tomcat
 }

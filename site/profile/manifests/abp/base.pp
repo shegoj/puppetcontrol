@@ -2,7 +2,6 @@ class profile::abp::base  {
 
 	class {'java':
 		distribution	=>	"jdk",
-		#version		=>	"1.7",
 		package		=>	"java-1.7.0-openjdk-devel",
 	} -> 
 	group {'esportz' :
