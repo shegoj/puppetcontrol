@@ -54,6 +54,9 @@ mod 'nginx',
 mod 'apache',
  :git => 'https://github.com/puppetlabs/puppetlabs-apache.git' 
 
+mod 'zabbix',
+ :git => 'https://github.com/voxpupuli/puppet-zabbix.git' 
+
 mod 'tomcat',
  :git => 'https://github.com/puppetlabs/puppetlabs-tomcat.git' 
 ###############################################################################

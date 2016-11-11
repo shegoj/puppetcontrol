@@ -12,7 +12,7 @@ class profile::puppet::params {
     }
     default: {
       #$remote = 'git@github.com:terrimonster/puppet-control.git'
-      $remote = 'git@https://github.com/shegoj/myPuppet_control'
+      $remote = 'git@https://github.com/shegoj/puppetcontrol.git'
     }
   }
 }
