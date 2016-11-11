@@ -1,4 +1,4 @@
-class ::profile::zabbix::master {
+class profile::zabbix::master {
   include ::home_base
 
   file {'/tmp/do.txt' :
