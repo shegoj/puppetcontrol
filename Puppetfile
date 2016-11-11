@@ -57,6 +57,9 @@ mod 'apache',
 mod 'zabbix',
  :git => 'https://github.com/voxpupuli/puppet-zabbix.git' 
 
+mod 'postgre',
+ :git => 'https://github.com/puppetlabs/puppetlabs-postgresql.git' 
+
 mod 'tomcat',
  :git => 'https://github.com/puppetlabs/puppetlabs-tomcat.git' 
 ###############################################################################
