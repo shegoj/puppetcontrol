@@ -63,7 +63,7 @@ mod 'postgresql',
 mod 'apt',
  :git => 'https://github.com/puppetlabs/puppetlabs-apt.git'
 
-mod 'apt',
+mod 'wordpress',
  :git => 'https://github.com/hunner/puppet-wordpress.git'
 
 mod 'tomcat',
