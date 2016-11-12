@@ -60,9 +60,11 @@ mod 'zabbix',
 mod 'postgresql',
  :git => 'https://github.com/puppetlabs/puppetlabs-postgresql.git' 
 
-
 mod 'apt',
  :git => 'https://github.com/puppetlabs/puppetlabs-apt.git'
+
+mod 'apt',
+ :git => 'https://github.com/hunner/puppet-wordpress.git'
 
 mod 'tomcat',
  :git => 'https://github.com/puppetlabs/puppetlabs-tomcat.git' 
