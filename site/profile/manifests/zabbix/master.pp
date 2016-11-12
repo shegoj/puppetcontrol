@@ -1,9 +1,5 @@
-class profile::zabbix::master {
-  include ::home_base
+class profile::zabbix::master inherits profile::zabbix::base {
 
-  file {'/tmp/do.txt' :
-    ensure  => present,
-  }
   class { 'apache':
     mpm_module => 'prefork',
   }
@@ -11,7 +7,4 @@ class profile::zabbix::master {
 
   class { 'postgresql::server': }
 
-  class { 'zabbix':
-    zabbix_url    => 'zabbix.example.com',
-  }
 }

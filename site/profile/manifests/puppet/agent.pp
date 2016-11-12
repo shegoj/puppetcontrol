@@ -5,6 +5,8 @@ class profile::puppet::agent (
 
   notify{"olusegun ${::settings::confdir}":}
   validate_string($master, $environment)
+   
+  include home_base
 
 
   ini_setting { "puppet agent's master":
@@ -36,8 +38,8 @@ class profile::puppet::agent (
     setting => 'baz',
     value => 'quux',
   }
-	file { 'motd':
-  	name    => '/etc/motd',
+  file { 'motd':
+    name    => '/etc/motd',
     mode    => '0664',
     owner   => 'root',
    	group   => 'root',

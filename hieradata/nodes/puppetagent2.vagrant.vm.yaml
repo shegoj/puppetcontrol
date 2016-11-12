@@ -1,4 +1,4 @@
 ---
-classes: role::zabbix::master
+classes: role::wordpress::master
 profile::puppet::agent::master-: puppetmaster.vagrant.vm
 profile::puppet::master::autosign: true

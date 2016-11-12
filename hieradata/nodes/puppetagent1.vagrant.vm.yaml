@@ -1,4 +1,3 @@
 ---
 classes: role::zabbix::master
 profile::puppet::agent::master-: puppetmaster.vagrant.vm
-profile::puppet::master::autosign: true

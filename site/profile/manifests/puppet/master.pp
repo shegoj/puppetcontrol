@@ -6,6 +6,7 @@ class profile::puppet::master (
   validate_bool($hiera_eyaml,$autosign)
 
   include ::profile::puppet::r10k
+  include ::home_base
 
   File {
     owner => 'root',
