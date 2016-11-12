@@ -74,6 +74,12 @@ class home_base () inherits home_base::params {
     group   =>  'root',
     require => User["${baseuser}"],
   }
+
+  ## zabbix agent install
+  #
+  class { 'zabbix::agent':
+    server => "${zabbixserver}",
+  }
   
 #augeas { "sudo_operator":
 #    context => "/files/etc/sudoers",
