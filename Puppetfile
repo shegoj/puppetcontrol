@@ -66,6 +66,9 @@ mod 'apt',
 mod 'wordpress',
  :git => 'https://github.com/hunner/puppet-wordpress.git'
 
+mod 'mysql',
+ :git => 'https://github.com/puppetlabs/puppetlabs-mysql.git'
+
 mod 'tomcat',
  :git => 'https://github.com/puppetlabs/puppetlabs-tomcat.git' 
 ###############################################################################
