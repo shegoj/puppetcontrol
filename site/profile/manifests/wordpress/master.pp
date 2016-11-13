@@ -1,6 +1,6 @@
 class profile::wordpress::master {
   class { 'wordpress': 
-    version => '4.6'
+    install_url => 'http://wordpress.org/wordpress-4.6.tar.gz',
   }
   include '::mysql::server'
   notify {' will install wordpress master' : }
