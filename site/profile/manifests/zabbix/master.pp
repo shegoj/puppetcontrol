@@ -7,4 +7,8 @@ class profile::zabbix::master inherits profile::zabbix::base {
 
   class { 'postgresql::server': }
 
+  class { 'zabbix':
+    zabbix_url    => 'zabbix.example.com',
+  }
+
 }
