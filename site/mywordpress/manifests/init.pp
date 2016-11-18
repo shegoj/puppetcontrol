@@ -47,17 +47,24 @@ class mywordpress (
   $apache_version         =  $::mywordpress::params::apache_version,
   $wordpress_directory    =  $::mywordpress::params::install_directory,
   $wordpress_user         =  $::mywordpress::params::wordpress_user,
+  $local_db_install       =  $::mywordpress::params::local_db_install,
 ) inherits mywordpress::params {
 
-  package{'httpd' :
-    ensure => "${apache_version}",
+  if $local_db_install == true {
+    package {"mysql-server" : 
+     ensure => present,
+   }
+ }
+
+  package{"${apache_binary}" :
+    ensure => present,
   }
 
-  package{'wget' :
-    ensure => "installed",
+  package{$wp_dependencies :
+    ensure => present,
   }
 
-  service{'httpd' :
+  service{"${apache_binary}" :
     ensure => running,
     enable => true,
   }
@@ -72,10 +79,10 @@ class mywordpress (
   }
 
   exec {'install wordpress' :
-    command => "wget https://wordpress.org/${wordpress_version}.tar.gz  && tar xvfz ${wordpress_version}.tar.gz -C ${wordpress_directory}",
+    command => "wget https://wordpress.org/${wordpress_version}.tar.gz  && rm -rf ${wordpress_directory}/wordpress && tar xvfz ${wordpress_version}.tar.gz -C ${wordpress_directory} && rm -f  ${wordpress_version}.tar.gz",
     path    => '/usr/bin:/usr/sbin:/bin',
-    #onlyif  => "test -d ${wordpress_directory}, test -d /var/www/html",
-    require => [ Package['httpd'], File['wordpress_directory'] ],
-    notify  => Service['httpd'],
+    onlyif  => [ "test -d ${wordpress_directory}", "test -d /var/www/html" ],
+    require => [ Package["${apache_binary}"],Package[$wp_dependencies], File['wordpress_directory'] ],
+    notify  => Service["${apache_binary}"],
   }
 }

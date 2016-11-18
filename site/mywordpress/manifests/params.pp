@@ -48,7 +48,14 @@ class mywordpress::params (
   $install_directory = '/opt/',
   $wordpress_user    = 'wordpress',
   $wordpress_group   = 'wordpress',
+  $local_db_install  = true,
 )
 {
+  $wp_dependencies =  ['php5', 'libapache2-mod-php5', 'php5-mcrypt', 'php5-mysqlnd-ms','wget']
+  $apache_binary = $::osfamily ? {
+    'Debian'  => 'apache2',
+    'RedHat'  => 'httpd',
+    default   => 'httpd',
+  }
   notify {'welcome home params':}
 }

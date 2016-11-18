@@ -14,10 +14,13 @@ describe 'mywordpress' do
       }
     end
 
-     it { should contain_package('httpd').with_ensure ('latest') }
+    let :facts do 
+      { :osfamily => 'RedHat'}
+    end
+
+     it { should contain_package('httpd').with_ensure ('present') }
      it { 
         should  contain_exec('install wordpress')
-         .with_require([ 'Package[httpd]', 'File[wordpress_directory]' ])
          .with_notify ('Service[httpd]') 
        }
 
