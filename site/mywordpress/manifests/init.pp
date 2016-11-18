@@ -53,6 +53,10 @@ class mywordpress (
     ensure => "${apache_version}",
   }
 
+  package{'wget' :
+    ensure => "installed",
+  }
+
   service{'httpd' :
     ensure => running,
     enable => true,
